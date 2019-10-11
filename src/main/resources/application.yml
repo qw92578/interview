@@ -1,4 +1,42 @@
-mybatis:
-# spring boot集成mybatis的方式打印sql
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+      allow-bean-definition-overriding: true
+
+  logging.level.org.springframework.boot.autoconfigure: ERROR
+
+security:
+
+
+---
+# 开发环境配置
+spring:
+  profiles: dev
+  datasource:
+      url: jdbc:mysql://192.168.2.51:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: maintenance
+      password: sjfdkalfjkdlaj@1111JFdkajfkdajk
+      driverclassName: com.mysql.cj.jdbc.Driver
+      testOnBorrow: true
+      validationQuery: select 1
+  logging:
+      com.cd.interview: info
+      console:
+      path: /test/logs
+  executor:
+      corePoolSize: 2
+      keepAliveSeconds: 500
+      maxPoolSize: 3
+      queueCapacity: 20
+  logback:
+      level: debug
+
+---
+# 测试环境配置
+
+---
+# 生产环境配置

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <springProperty scope="context" name="logLevel" source="spring.logback.level"/>
+    <!--<springProperty scope="context" name="logPath" source="log.path"/>-->
+
+    <!-- 日志文件目录 -->
+    <property name="log.path" value="/test/log" />
+
+    <!--  interview service -->
+    <appender name="interviewServiceAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <file>${log.path}/test_interview.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/test_interview.%d{yyyy-MM-dd-HH}.log
+            </fileNamePattern>
+            <!--<maxHistory>10</maxHistory> -->
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date|%thread|%X{invokeNo}|%level|%logger{0}|%method|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- 其他日志 -->
+    <appender name="otherAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <file>${log.path}/other.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/other.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date|%thread|%X{invokeNo}|%level|%logger{0}|%method|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- 错误 -->
+    <appender name="errorAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>${log.path}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/error.%d{yyyy-MM-dd-HH}.log
+            </fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date|%thread|%X{invokeNo}|%level|%logger{0}|%method|%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 其他错误日志 -->
+    <appender name="otherErrorAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <file>${log.path}/other-error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/other-error.%d{yyyy-MM-dd-HH}.log
+            </fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date|%thread|%X{invokeNo}|%level|%logger{0}|%method|%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 定义控制台打印日志 -->
+    <appender name="systemOutAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>debug</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date|%thread|%X{invokeNo}|%level|%logger{0}|%method|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.cd.interview" level="${logLevel}"
+            additivity="false">
+        <appender-ref ref="interviewServiceAppender" />
+        <appender-ref ref="errorAppender" />
+        <appender-ref ref="systemOutAppender" />
+    </logger>
+
+    <root>
+        <level value="${logLevel}" />
+        <appender-ref ref="systemOutAppender" />
+        <appender-ref ref="otherAppender" />
+        <appender-ref ref="otherErrorAppender" />
+    </root>
+
+</configuration>

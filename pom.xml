@@ -15,14 +15,27 @@
     <description>project for interview</description>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <dubbo-version>2.6.2</dubbo-version>
+        <curator-version>2.12.0</curator-version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
     </properties>
 
     <dependencies>
-        <dependency>
+
+        <!-- 引入该坐标 则一直在登录页面-->
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        </dependency>-->
+
+        <!--<dependency>
+           <groupId>org.springframework.security</groupId>
+           <artifactId>spring-security-test</artifactId>
+           <scope>test</scope>
+       </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -47,10 +60,55 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!--工具包-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.0.0</version>
         </dependency>
     </dependencies>
 
@@ -61,6 +119,68 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <resources>
+            <!-- 引入jar -->
+           <!-- <resource>
+                <directory>${basedir}/lib/</directory>
+                <targetPath>BOOT-INF/lib/</targetPath>
+                <includes>
+                    <include>*.jar</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/java</directory>
+                <includes>
+                    <include>linux-x86/*.so</include>
+                    <include>linux-x86-64/*.so</include>
+                    <include>win32-x86/*.dll</include>
+                    <include>win32-x86/*.manifest</include>
+                    <include>win32-x86/*.pdb</include>
+                    <include>win32-x86-64/*.dll</include>
+                    <include>win32-x86-64/*.manifest</include>
+                    <include>win32-x86-64/*.pdb</include>
+                    <include>*.properties</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>-->
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>mybatis/config/*.xml</include>
+                    <include>mybatis/mapper/*.xml</include>
+                    <include>*.properties</include>
+                    <include>*.yml</include>
+                    <include>*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>static/**</include>
+                    <include>static/**/**</include>
+                    <include>static/**/**/**</include>
+                    <include>static/**/**/**/**</include>
+                    <include>templates/**</include>
+                    <include>templates/**/**</include>
+                    <!--<include>static/css_lib/css_lib/*.eot</include>-->
+                    <!--<include>static/css_lib/css_lib/*.svg</include>-->
+                    <!--<include>static/css_lib/css_lib/*.ttf</include>-->
+                    <!--<include>static/css_lib/css_lib/*.woff</include>-->
+                    <!--<include>static/css_lib/css_lib/*.woff2</include>-->
+                    <!--<include>static/css_lib/*.css</include>-->
+                    <!--<include>static/css_lib/lib/*.css</include>-->
+                    <!--<include>static/css_lib/lib/calendar/*.css</include>-->
+                    <!--<include>static/css_lib/lib/font-awesome/*.*</include>-->
+                    <!--<include>static/css_lib/lib/font-awesome/*.*</include>-->
+                    <!--<include>mybatis/mapper/*.xml</include>-->
+                    <!--<include>*.properties</include>-->
+                    <!--<include>*.yml</include>-->
+                    <!--<include>*.xml</include>-->
+                </includes>
+            </resource>
+        </resources>
     </build>
 
 </project>
