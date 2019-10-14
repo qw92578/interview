@@ -8,19 +8,23 @@ package com.cd.interview.test;
  * @Date: 2019/10/9 9:29
  */
 public class TestImpl implements TestServer {
-    public TestImpl() {
-        System.err.println("构造");
+
+    static {
+        System.err.println("静态代码块");
     }
 
     {
         System.err.println("代码块");
     }
 
-    static {
-        System.err.println("静态代码块");
+    public TestImpl() {
+        System.err.println("类的无参构造");
     }
 
     public static final String S = "静态变量";
+
+
+
 
     public static void staMethod() {
         System.err.println("静态方法");
@@ -30,6 +34,7 @@ public class TestImpl implements TestServer {
     /**
      * 如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，
      * 则称为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型。
+     *
      * @param a
      * @return
      */
@@ -44,6 +49,7 @@ public class TestImpl implements TestServer {
 
     /**
      * 重写Overriding是父类与子类之间多态性的一种表现
+     *
      * @param s
      */
     @Override
