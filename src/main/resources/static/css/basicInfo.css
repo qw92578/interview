@@ -1,0 +1,309 @@
+@import "../css/bootstrap-table.min.css";
+@import "../css/jquery.filer/reset.css";
+@import "../css/jquery.filer/jquery.filer.css";
+@import "../css/jquery.filer/jquery.filer-dragdropbox-theme.css";
+@import "../css/jquery.filer/tomorrow.css";
+/*@import "../lib/jquery.filer/custom.css";*/
+.main-content-wrap {
+    width: 100%;
+    padding: 0 15px;
+}
+.articleWrap {
+    width: 100%;
+    min-height: 600px;
+    height: 100%;
+}
+.addBtnWrap {
+    width: 100%;
+    padding-bottom: 10px;
+}
+.articleWrap section {
+    width: 100%;
+    padding: 5px;
+}
+.section_title {
+    font-weight: bold;
+}
+.btn-add-section {
+    width: 100px;
+    height: 28px;
+    margin-left: 10px;
+    line-height: 22px;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(43,187,89,0.15);
+}
+.btn-add-section:focus {
+    color: inherit;
+}
+.section_content {
+    width: 100%;
+    margin-top: 8px;
+    border: 1px solid #CCCCCC;
+}
+.section_content input, .section_content textarea {
+    width: 100%;
+    border: none;
+}
+.section_content input:focus, .section_content textarea:focus {
+    outline:none; /* 去除input框高亮 */
+}
+input.section_content_title {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #CCCCCC;
+}
+textarea.section_content_detail {
+    padding: 6px 8px;
+    resize:none;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}
+.removeSectionBtn {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
+    background: url(../../img_lib/common/icon_normal.png) no-repeat -32px 0;
+}
+.removeSectionBtn:hover {
+    background: url(../../img_lib/common/icon_hover.png) no-repeat -32px 0;
+}
+
+/* 图片上传 */
+.upload-item {
+    position: relative;
+    display: inline-block;
+    /*width: 100%;*/
+    width: 200px;
+    height: 28px;
+    top: 10px;
+    left: 10px;
+    margin-bottom: 0;
+}
+.contractAttach .upload-item, .customerFilesAttach .upload-item {
+    width: 100%;
+}
+.upload-item .control-label {
+    /*margin-right: 10px;*/
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+}
+.jFiler-theme-default .jFiler-input {
+    left: 0!important;
+}
+.form-group .addObjBtn {
+    display: inline-block;
+    margin-left: 20px;
+    width: 96px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(43,187,89,1);
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px rgba(43,187,89,0.15);
+}
+.contractAttach, .customerFilesAttach, .customerElse {
+    padding: 15px 0;
+}
+.attachType {
+    position: absolute;
+    top: 28px;
+    left: 3px;
+    font-size: 12px;
+    font-family: '宋体';
+}
+.jFiler-items.jFiler-row {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    width: 45px;
+    margin: 0!important;
+    background-color: transparent;
+
+}
+.jFiler-items-default .jFiler-item {
+    width: 35px!important;
+    padding: 0;
+}
+.jFiler-items-grid .jFiler-item .jFiler-item-container .jFiler-item-thumb {
+    min-height: 35px!important;
+    height: 35px!important;
+}
+.jFiler-items-grid .jFiler-item .jFiler-item-container {
+    margin: 0!important;
+    padding: 0!important;
+}
+.jFiler-item-assets {
+    position: absolute;
+    top: -20px!important;
+    right: -13px!important;
+}
+.jFiler-item-others, .jFiler-item-title {
+    display: none;
+}
+.jFiler-items-default .jFiler-item-assets {
+    margin: 0!important;
+    top: -10px!important;
+    right: -6px!important;
+}
+.jFiler-items-default .jFiler-item-assets a {
+    padding: 0;
+    font-size: 14px;
+}
+.icon-jfi-trash:before {
+    font-size: 14px;
+}
+
+.imgWrap ul {
+    margin:0;
+    padding:0;
+}
+
+.imgWrap li {
+    float: left;
+}
+
+img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+}
+
+.img-div {
+    width: 100%;
+    height: 100%;
+}
+.articleWrap .btn-blue-small {
+    margin: 5px 0;
+}
+
+/* 园区图片 */
+.imgWrap {
+    position: relative;
+    top: 20px;
+}
+.imgWrap li.imgItem {
+    position: relative;
+    width: 150px;
+    height: 80px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+.btn-blue-small {
+    border-radius: 2px!important;
+    margin-right: 20px;
+}
+
+/* 修改图片预览 start */
+.lg-backdrop.in {
+    opacity: .8;
+}
+.lg {
+    width: 50% !important;
+}
+.lg-outer .lg-toogle-thumb {
+    right: 12px!important;
+    top: -45px!important;
+}
+.lg-outer .lg-img-wrap {
+    padding: 0;
+}
+.lg-outer.lg-visible {
+    padding-top: 10%;
+}
+.lg-outer .lg {
+    height: 75% !important;
+}
+.lg-img-wrap img {
+    vertical-align: top!important;
+    margin-top: 40px;
+}
+/* 修改图片预览 end */
+.uploadInfoText {
+    position: relative;
+    top: -3px;
+    margin-top: 0px;
+    margin-left: 5px;
+    font-size: 12px;
+    font-family: '宋体';
+    color: #F78B00;
+    font-weight: bold;
+}
+@media (max-width: 1024px) {
+    .imgWrap li.imgItem {
+        width: 85px;
+    }
+    .lg {
+        width: 70% !important;
+        height: 80% !important;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .imgWrap li.imgItem {
+        width: 10%;
+    }
+}
+
+/*视频样式*/
+.uploader-list {
+    width: 300px;
+    height: 150px;
+    margin-bottom: 20px;
+    position: relative
+}
+.item-img{
+    min-width: 100%;
+    min-height: 150px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+}
+.item-img video {
+    width: 100%;
+}
+.item-img a {
+    width: 100%;
+    display: block;
+    height: 110px;
+    position: relative;
+}
+.progress, .progress>.progress-bar, .progress .progress-bar, .progress>.progress-bar .progress-bar {
+    width: 150px;
+}
+.del-btn {
+    cursor: pointer;
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #999;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 19px;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 6px;
+    font-weight: normal;
+}
+.del-btn-images {
+    top: -5px;
+    right: 5px;
+}
+.webuploader-pick {
+    background-color: rgba(43,187,89,1);
+}
+.webuploader-pick.disabled {
+    background-color: #ddd;
+}
+.play-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 26px;
+    transform: translate(-50%, -50%);
+    color: #999;
+}

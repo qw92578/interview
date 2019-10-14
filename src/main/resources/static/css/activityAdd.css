@@ -1,0 +1,326 @@
+@import "../css/toastr.min.css";
+@import "../css/bootstrap.css";
+@import "../css/jquery.filer/reset.css";
+@import "../css/jquery.filer/jquery.filer.css";
+@import "../css/jquery.filer/jquery.filer-dragdropbox-theme.css";
+@import "../css/jquery.filer/tomorrow.css";
+@import "../css/jquery.filer/custom.css";
+/* 新增通知公告列表 */
+html, body {
+    min-width: 900px;
+    overflow-x: auto;
+}
+
+#statistical {
+    padding: 0 20px;
+}
+.form-activity-add {
+    width: 80%;
+}
+.section {
+    margin: 5px 0 8px;
+    padding: 0 10px;
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.section_1:before {
+    background-position: -160px -24px;
+}
+.section_2:before {
+    background-position: -208px 0;
+}
+.section_3:before {
+    background-position: -208px 0;
+}
+.section_4:before {
+    background-position: -160px -48px;
+}
+.section_5:before {
+    background-position: -160px 0;
+}
+.form-activity-add .control-group {
+    margin-bottom: 10px!important;
+}
+.messageContent {
+    width: 100%;
+}
+.modalHeader .header-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.form-activity-add .control-label {
+    margin-bottom: 0;
+    font-family: 宋体;
+    font-size: 14px;
+    color: #666666;
+    font-weight: 600;
+}
+.checkbox-inline, .radio-inline {
+    font-family: 宋体;
+    font-size: 14px;
+}
+.upload-item {
+    position: relative;
+}
+.jFiler-items.jFiler-row {
+    margin-top: 35px;
+}
+.jFiler-items-default .jFiler-item .jFiler-item-icon {
+    margin-right: 5px;
+}
+.form-group .icheckbox_flat-blue, .iradio_flat-blue {
+    vertical-align: bottom;
+}
+.form-group .control-label .requiredIcon{
+    color: red;
+    font-size: 18px;
+    vertical-align: unset;
+}
+.form-group .addObjBtn {
+    display: inline-block;
+    margin-left: 20px;
+    width: 96px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(43,187,89,1);
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px rgba(43,187,89,0.15);
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    color: black;
+}
+.form-control-radius {
+    border-radius: 3px;
+}
+#objAddModal .modal-body {
+    height: 500px;
+    padding: 0;
+}
+.addObj {
+    padding-top: 8px;
+}
+.modal {
+    background: rgba(0,0,0,0);
+}
+.modal-backdrop.in {
+    opacity: 0;
+}
+
+.noticeObjWrap {
+    display: none;
+    width: 100%;
+    min-height: 60px;
+    max-height: 70px;
+    overflow-y: auto;
+    padding: 6px;
+    border: 1px solid #eee;
+    cursor: text;
+}
+.objContainer {
+    position: relative;
+    height: 100%;
+}
+.enterpriseManage {
+    display: none;
+}
+.objMenuWrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid #eee;
+    background-color: #EDF2F8;
+}
+.selectedObj {
+    width: 70%;
+    height: 100%;
+    margin-left: 30%;
+}
+.selectedObjWrap, .enterpriseWrap {
+    width: 100%;
+    height: 455px;
+    overflow-y: auto;
+    padding: 10px;
+}
+.moveToGroup {
+    margin-bottom: 10px;
+}
+.moveToGroup select {
+    display:  inline-block;
+    width: 200px;
+    margin-left: 10px
+}
+.enterpriseWrap {
+    width: 75% !important;
+    margin-left: 25% !important;
+    height: 500px;
+}
+.enterprise-table-wrap {
+    width: 100%;
+    overflow: auto;
+}
+.btn-wrap {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding-right: 15px;
+    text-align: right;
+    border-top: 1px solid #F8F8F8;
+    /*background-color: #F8F8F8;*/
+}
+.btn-wrap button {
+    width: 60px;
+    margin-left: 10px;
+    padding: 3px 0;
+}
+.treeMenu {
+    width: 100%;
+    height: 455px;
+    overflow-x: auto;
+    padding: 10px;
+    font-size: 12px;
+    color: #333333;
+    font-family: 宋体;
+}
+.tree-btn-wrap {
+    width: 100%;
+    height: 45px;
+    padding: 0 10px;
+    line-height: 45px;
+    text-align: center;
+}
+.tree-btn-wrap a {
+    color: black;
+    margin-right: 20px;
+}
+.tree-btn-wrap a i {
+    font-size: 16px;
+    color: #009BDB;
+    margin-right: 2px;
+}
+.userDefineSpan {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 9px;
+    font-family: 宋体;
+    color: #333333;
+    font-weight: 100;
+    border-radius: 14px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-color: #F7F7F7;
+    border: 1px solid #DEDEDE;
+}
+.userDefineSpan:hover {
+    background-color: #E8F7FF;
+    border-color: #B8D6FB;
+}
+
+
+.btn-wrap-footer {
+    position: relative;
+    width: 100%;
+    text-align: left;
+}
+.fixed-table-container tbody .selected td {
+    background-color: #fbe9ed;
+}
+.enterpriseMenuWrap {
+    width: 25% !important;
+}
+.enterpriseMenuWrap .jstree-default .jstree-anchor {
+    padding-left: 5px;
+}
+.enterpriseMenuWrap .jstree-clicked {
+    background-color: #278cde;
+    color: white;
+}
+.enterpriseMenuWrap .jstree-clicked:hover {
+    background-color: #278cde!important;
+    color: #FFFFFF!important;
+}
+.enterpriseMenuWrap .jstree-anchor:hover {
+    background-color: #CFEAFF;
+    color: #333333;
+}
+.change-info {
+    font-size: 18px;
+    margin: 0 0 10px 30px;
+    line-height: 40px;
+}
+.change-info .radio-inline {
+    margin-left: 0;
+}
+.change-info .radio-inline .iradio_flat-blue {
+    vertical-align: middle;
+}
+.newGroupName {
+    margin: 0 5px;
+}
+
+
+.jstree-default .jstree-search {
+    font-size: 14px;
+}
+
+.btn-wrap-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: rgba(0,0,0,.6);
+}
+.btn-wrap-footer .btn {
+    width: 140px;
+}
+.btn-wrap-footer a.btn {
+    padding: 6px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+.btn-wrap-footer button:nth-child(2) {
+    margin: 0 15px;
+}
+.form-horizontal.form-activity-add .form-group {
+    margin-bottom: 15px;
+}
+.jFiler-theme-default .jFiler-input {
+    top: 2px;
+    left: 15px;
+}
+.form2 {
+    display: none;
+}
+.jFiler-theme-default .jFiler-items.jFiler-row {
+    background-color: #F2F7FB;
+}
+@media (min-width: 768px) {
+    .objMenuWrap {
+        width: 35%;
+    }
+    .selectedObj {
+        width: 65%;
+        margin-left: 35%;
+    }
+    .enterpriseMenuWrap {
+        width: 22%;
+    }
+    .enterpriseWrap {
+        width: 78%;
+        margin-left: 22%;
+    }
+}
+
+.btn-wrap-footer-admin {
+    position: relative;
+}
