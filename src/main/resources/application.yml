@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 9999
 
 spring:
   profiles:
@@ -26,7 +26,7 @@ spring:
   logging:
       com.cd.interview: info
       console:
-      path: /test/logs
+      path: /interview/logs
   executor:
       corePoolSize: 2
       keepAliveSeconds: 500
