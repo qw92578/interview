@@ -7,7 +7,7 @@ package com.cd.interview.test;
  * @Description: 计算 常见的
  * @Date: 2019/10/9 11:20
  */
-public class Cla {
+public class ClaDemo {
 
     public static void main(String[] args) {
 //        shortTest();

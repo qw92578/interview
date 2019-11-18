@@ -4,26 +4,39 @@ package com.cd.interview.test;
  * @Package: com.cd.interview
  * @ClassName: test
  * @Author: fgq
- * @Description:
+ * @Description: 加载过程
+ * 1. 父类的静态变量
+ * 2 父类的静态代码块
+ * 3 子类的静态变量
+ * 4 子类的静态代码块
+ * 5 父类的非静态变量
+ * 6 父类的非静态代码块
+ * 7 父类的构造方法
+ * 8 子类的非静态变量
+ * 9 子类的非静态代码块
+ * 10 子类的构造方法
  * @Date: 2019/10/9 9:29
  */
-public class TestImpl implements TestServer {
+public class TestImpl extends FatrherClass {
+    @Override
+    public void fatherMethod() {
+        System.out.println("子类重写父类的方法");
+    }
 
     static {
-        System.err.println("静态代码块");
+        System.out.println("子静态代码块");
     }
 
     {
-        System.err.println("代码块");
+        System.out.println("子代码块");
     }
 
     public TestImpl() {
-        System.err.println("类的无参构造");
+        super.fatherMethod();
+        System.out.println("子类的无参构造");
     }
 
     public static final String S = "静态变量";
-
-
 
 
     public static void staMethod() {
@@ -44,7 +57,9 @@ public class TestImpl implements TestServer {
     }
 
     public static void main(String[] args) {
-        TestImpl test = new TestImpl();
+        TestImpl son = new TestImpl();
+//        FatrherClass fatrherClass = new FatrherClass();
+            son.fatherMethod();
     }
 
     /**
@@ -52,8 +67,8 @@ public class TestImpl implements TestServer {
      *
      * @param s
      */
-    @Override
-    public void fatherMethod(String s) {
-        System.err.println("父类的方法");
-    }
+//    @Override
+//    public void fatherMethod(String s) {
+//        System.err.println("父类的方法");
+//    }
 }
