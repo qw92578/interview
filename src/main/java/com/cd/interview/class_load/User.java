@@ -1,5 +1,7 @@
 package com.cd.interview.class_load;
 
+import java.lang.reflect.Method;
+
 /**
  * @Package: com.cd.interview.class_load
  * @ClassName: User
@@ -24,7 +26,7 @@ public class User {
     }
 
     public User(String name) {
-        super();
+//        super();
         this.name = name;
     }
 
@@ -54,7 +56,7 @@ public class User {
 }
 
 class Test {
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         /**
          * 第一种方式 Class.forName 源码
          */
@@ -81,6 +83,20 @@ class Test {
          */
         System.err.println(user == user4);
 
+        /**
+         * 获取类对象之后就可以对类进行一些创建对象、调用方法、访问成员变量的操作了
+         */
+
+        /**
+         * 创建对象
+         */
+        Object o = user1.newInstance();
+        System.err.println(o);
+
+        Method[] methods = user1.getMethods();
+        for (Method method : methods) {
+            System.err.println("方法："+ method);
+        }
 
     }
 }
