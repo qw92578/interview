@@ -18,15 +18,42 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SpringResource {
 
     public static void main(String[] args) {
-        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
-//        DefaultListableBeanFactory defaultListableBeanFactory;
-        DefaultListableBeanFactory d = new DefaultListableBeanFactory();
+//        BeanFactory bf = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
+////        DefaultListableBeanFactory defaultListableBeanFactory;
+//        DefaultListableBeanFactory d = new DefaultListableBeanFactory();
+//
+//        List list = new ArrayList();
+//        Queue<String> strings = new ArrayDeque<>();
+//        LinkedHashMap map = new LinkedHashMap();
+//        LinkedList<String> linkedList = new LinkedList<>();
+//
+//        Map concurrentHashMap = new ConcurrentHashMap();
 
-        List list = new ArrayList();
-        Queue<String> strings = new ArrayDeque<>();
-        LinkedHashMap map = new LinkedHashMap();
-        LinkedList<String> linkedList = new LinkedList<>();
+        System.out.println(1 << 3);
 
-        Map concurrentHashMap = new ConcurrentHashMap();
+        int i=0;
+        Integer s= null;
+        for (int j = 0; j < 10; j++) {
+            i++;
+            s++;
+        }
+        System.err.println("i:"+i);
+        System.err.println("s: "+s);
+
+
+    }
+
+    public void method(String a,Integer b){
+        System.out.println("hah");
+    }
+
+    public String method(Integer b,String a){
+        return a;
+    }
+
+    public String method(String test) {
+        return "String";
     }
 }
+
+
