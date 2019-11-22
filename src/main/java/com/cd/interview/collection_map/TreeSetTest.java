@@ -8,7 +8,7 @@ import java.util.TreeSet;
  * @Package: com.cd.interview.list_map
  * @ClassName: ListDemo
  * @Author: fgq
- * @Description: 多种list的区别
+ * @Description: TreeSet分析
  * @Date: 2019/11/20 8:34
  */
 public class TreeSetTest {

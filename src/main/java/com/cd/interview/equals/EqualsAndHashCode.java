@@ -1,7 +1,7 @@
-package com.cd.interview.test.equals;
+package com.cd.interview.equals;
 
 /**
- * @Package: com.cd.interview.test.equals
+ * @Package: com.cd.interview.equals
  * @ClassName: EqualsAndHashCode
  * @Author: fgq
  * @Description: equals和hashCode的理解
@@ -20,6 +20,9 @@ public class EqualsAndHashCode {
 //        System.err.println((n &（1<<3））>>3);
         int n =2;
         System.out.println((n & (1 << 3)) >> 3);
+
+        Double d = 0.11;
+        d.hashCode();
 
 
         //二进制： 0000 0000

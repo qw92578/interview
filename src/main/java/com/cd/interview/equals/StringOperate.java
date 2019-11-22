@@ -1,9 +1,9 @@
-package com.cd.interview.test.equals;
+package com.cd.interview.equals;
 
 import java.io.UnsupportedEncodingException;
 
 /**
- * @Package: com.cd.interview.test.equals
+ * @Package: com.cd.interview.equals
  * @ClassName: StringOperate
  * @Author: fgq
  * @Description: 利用递归实现字符串反转

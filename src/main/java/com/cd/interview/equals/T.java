@@ -1,7 +1,7 @@
-package com.cd.interview.test.equals;
+package com.cd.interview.equals;
 
 /**
- * @Package: com.cd.interview.test.equals
+ * @Package: com.cd.interview.equals
  * @ClassName: T
  * @Author: fgq
  * @Description:
